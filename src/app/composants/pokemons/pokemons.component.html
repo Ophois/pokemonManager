@@ -1,0 +1,35 @@
+<div class="container">
+  <h2> Les six premiers Pokémons : </h2>
+  <hr />
+  <div class="columns">
+    <div class="column">
+      <p>Dans l'ordre du Pokédex : </p>
+      <p> {{ compte }} Pokémons en base de données.</p>
+      <p *ngIf="pkSelectionne">Le Pokémon sélectionné est : {{ pkSelectionne }}</p>
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column is-two-third">
+      <form>
+        <div class="field has-addons">
+          <div class="control has-icon-left">
+            <input class="input is-small" name="pokemonRecherche"
+                   type="text" [(ngModel)]="formRecherchePokemon.nom"
+                   (keyup)="rechercher(formRecherchePokemon.nom)">
+            <span class="icon is-small is-left">
+              <fa-icon [icon]="faOptinMonster"></fa-icon>
+            </span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="columns is-multiline">
+    <ul class="menu-list column is-one-third" *ngFor="let pk of pokemons">
+      <li>
+        <app-pokemon [pk]="pk" (evtClickImage)="pkSelectionne=$event"></app-pokemon>
+      </li>
+    </ul>
+  </div>
+</div>
