@@ -1,5 +1,5 @@
 <div class="container">
-  <h2> Les six premiers Pokémons : </h2>
+  <h2> Les vingt premiers Pokémons : </h2>
   <hr />
   <div class="columns">
     <div class="column">
@@ -17,7 +17,7 @@
                    type="text" placeholder="Nom du pokemon"
                    [(ngModel)]="formRecherchePokemon.nom"
                    (keyup)="rechercher(formRecherchePokemon.nom)"
-                   pattern="[a-z-Z 3]*" [class.is-danger]="form.invalid">
+                   pattern="[a-z-Z] 3*" [class.is-danger]="form.invalid">
             <span class="icon is-small is-left">
               <fa-icon [icon]="faOptinMonster"></fa-icon>
             </span>

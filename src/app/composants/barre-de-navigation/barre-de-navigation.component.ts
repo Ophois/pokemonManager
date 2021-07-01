@@ -12,9 +12,12 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class BarreDeNavigationComponent implements OnInit {
 
+  public log!: boolean;
   constructor(public authService: AuthService) { }
 
   ngOnInit(): void {
+    this.log = this.authService.isLoggedIn;
+
   }
 
 }

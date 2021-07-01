@@ -49,6 +49,7 @@ export class PokemonsComponent implements OnInit {
       this.pokemons = data.results;
     });
     this.formRecherchePokemon.setNom('');
+    this.easterEggs = false;
   }
 
 }

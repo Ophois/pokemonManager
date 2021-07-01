@@ -42,9 +42,15 @@ export class PokemonService {
     return this.pokemons.length;
   }*/
 
- /* rechercherPokemon(nom: string) {
+  /*rechercherPokemon(nom: string) {
     let regex = new RegExp(nom, 'gi');
-    return this.pokemons.filter(pokemon => pokemon.nom.match(regex));
+    let pokemons: any;
+    this.getPokemons().subscribe(data => {
+      pokemons = data.results;
+      return pokemons.filter((pokemon: any) => {
+        pokemon.name.match(regex);
+      });
+    });
   }*/
 
 

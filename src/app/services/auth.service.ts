@@ -22,7 +22,7 @@ export class AuthService {
         let tmp: any = localStorage.getItem('user')
         JSON.parse(tmp);
       } else {
-        localStorage.setItem('user', '');
+        localStorage.setItem('user', '{}');
         let tmp:any = localStorage.getItem('user');
         JSON.parse(tmp);
       }
