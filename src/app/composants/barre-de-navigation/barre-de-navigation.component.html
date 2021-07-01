@@ -1,0 +1,36 @@
+<nav class="navbar" role="navigation" aria-label="main.navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="http://google.fr">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9_logo.svg.png">
+    </a>
+  </div>
+
+  <div id="barreDeNavigation" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item" routerLink="/generations">
+        Générations
+      </a>
+      <a class="navbar-item" routerLink="/pokemons">
+        Pokémons
+      </a>
+    </div>
+    <div class="navbar-start" *ngIf="authService.isLoggedIn">
+      <a class="navbar-item" routerLink="/prive">
+        Privé
+      </a>
+      <a class="navbar-item" routerLink="/prive2">
+        Privé 2
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons">
+          <a class="button is-light is-smapp" routerLink="/seConnecter">
+            Se Connecter
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -10,20 +10,41 @@
   </div>
   <div class="columns">
     <div class="column is-two-third">
-      <form>
+      <form #form="ngForm">
         <div class="field has-addons">
-          <div class="control has-icon-left">
+          <div class="control has-icons-left">
             <input class="input is-small" name="pokemonRecherche"
-                   type="text" [(ngModel)]="formRecherchePokemon.nom"
-                   (keyup)="rechercher(formRecherchePokemon.nom)">
+                   type="text" placeholder="Nom du pokemon"
+                   [(ngModel)]="formRecherchePokemon.nom"
+                   (keyup)="rechercher(formRecherchePokemon.nom)"
+                   pattern="[a-z-Z 3]*" [class.is-danger]="form.invalid">
             <span class="icon is-small is-left">
               <fa-icon [icon]="faOptinMonster"></fa-icon>
             </span>
+            <div *ngIf="form.invalid" class="tag is-danger is-light">
+              Le champs ne doit contenir que des lettres
+            </div>
+            <div *ngIf="easterEggs">
+              <img src="https://media.giphy.com/media/3o7bu1nVSxNQUWMAZa/source.gif">
+            </div>
+          </div>
+          <div class="control">
+            <a class="button is-primary is-small"
+               (click)="rechercher(formRecherchePokemon.nom)"
+               [class.is-danger]="form.invalid">
+               Rechercher
+            </a>
+          </div>
+          <div class="control">
+            <a class="button is-light is-small" (click)="annuler()">
+              Annuler
+            </a>
           </div>
         </div>
       </form>
     </div>
   </div>
+<div *ngIf="pokemons?.length<1">Aucun Pokémon trouvé</div>
 
   <div class="columns is-multiline">
     <ul class="menu-list column is-one-third" *ngFor="let pk of pokemons">

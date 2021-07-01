@@ -1,3 +1,4 @@
+/* formulaire de recherche (template-driven) */
 export class FormRecherchePokemon {
   nom: string;
 

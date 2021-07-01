@@ -1,7 +1,7 @@
 <div class="container">
   <h2> Générations de Pokémons :</h2>
   <hr/>
-  <div class="menu">
+ <!-- <div class="menu">
     <p class="menu-label">Les différentes générations : </p>
       <ul class="menu-list" *ngFor="let gen of generations">
        <li>
@@ -9,4 +9,12 @@
        </li>
      </ul>
   </div>
+</div>-->
+<div class="menu" *ngIf="generations">
+  <p class="menu-label">{{ nbGenerations}} différentes générations: </p>
+    <ul class="menu-list" *ngFor="let gen of generations">
+     <li>
+       <a>{{ gen.name | titlecase }}</a>
+     </li>
+   </ul>
 </div>
