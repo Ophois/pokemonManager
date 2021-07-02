@@ -37,7 +37,8 @@ export class PokemonsComponent implements OnInit {
   }
   //recherche. Non implémenté dans l'API
   rechercher(nom:string) {
-    //this.pokemons = this.pkService.rechercherPokemon(nom);
+   // this.pokemons = this.pkService.rechercherPokemon(nom);
+    console.log(this.pokemons);
     this.easterEggs = false;
     if(nom == 'C3PO') this.easterEggs = true;
   }
